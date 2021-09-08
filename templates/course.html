@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>{{course['Name']}}</title>
+</head>
+<a href="https://carte.utoronto.ca/" target="_blank"><img src="/static/CARTE_logo.jpg" class="img-fluid" style="max-width: 25%"></a>
+<h1 style="text-align: center">Education Pathways</h1>
+
+<body>
+    {% for k,v in course.items() %}
+        <p>
+            <b>{{k}}:</b> {{v | safe}}
+        </p>
+    {% endfor %}
+
+    {% if faseavailable %}
+        <p>
+          This course is likely available to students in FASE!
+        </p>
+    {% endif %}
+
+    {% if mayberestricted %}
+    <p>
+      This course may be restricted to students within this department.
+    </p>
+    {% endif %}
+
+    {% for t,a in zip(terms,activities) %}
+    <p>
+      <b>{{t}}:</b>
+    </p>
+    <p>
+      {{a | safe}}
+    </p>
+    {%endfor%}
+
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+        
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-if7n{border-color:#38fff8;text-align:center;vertical-align:top}
+        .tg .tg-dxqr{border-color:inherit;color:#fe0000;text-align:center;vertical-align:top}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+        .tg .tg-0lax{border-color:#38fff8;text-align:center;vertical-align:top}
+        </style>
+        <table class="tg">
+        <tbody>
+          <tr>
+            <td class="tg-if7n" rowspan="3">
+            <p>Smart Pre-Requisites:</p>
+                {% for c in aip %}
+                  <p><a href='/course/{{c}}'>{{c}}</a></p>
+                {% endfor %}
+            </td>
+            <td class="tg-0pky" rowspan="3">
+            <p>Pre-Requisites:</p>
+                {% for c in pre %}
+                    <p><a href='/course/{{c[0]}}'>{{c[0]}}</a></p>
+                {% endfor %}
+            </td>
+            <td class="tg-c3ow">
+            <p>Co-Requisites:</p>
+                {% for c in coreq %}
+                    <p><a href='/course/{{c}}'>{{c}}</a></p> 
+                {% endfor %}
+            </td>
+            <td class="tg-0pky" rowspan="3">
+                <p>Pre-Requisite for:</p>
+                {% for c in post %}
+                    <p><a href='/course/{{c[1]}}'>{{c[1]}}</a></p>
+                {% endfor %}
+            </td>
+            <td class="tg-0lax">
+              <p>Smart Majors:</p>
+              {% for c in majors %}
+                    <p>{{c}}</p>
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-7btt">{{course['Name']}}</td>
+            <td class="tg-0lax" rowspan="2">
+              <p>Smart Minors/Certs/Specs:</p>
+              {% for c in minors %}
+                      <p>{{c}}</p>
+              {% endfor %}
+            </td>  
+          </tr>
+          <tr>
+            <td class="tg-dxqr">
+                <p>Exclusions:</p>
+                {% for c in excl %}
+                    <p><a href='/course/{{c}}'>{{c}}</a></p>
+                {% endfor %}
+            </td>
+          </tr>
+        </tbody>
+        </table>
+</body>
+</html>

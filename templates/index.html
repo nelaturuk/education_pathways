@@ -1,0 +1,26 @@
+<!doctype html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+    <title>Education Pathways</title>
+</head>
+<a href="https://carte.utoronto.ca/" target="_blank"><img src="/static/CARTE_logo.jpg" class="img-fluid" style="max-width: 25%"></a>
+<h1 style="text-align: center">Education Pathways</h1>
+    
+<p>Welcome to CARTE's in-development tool for course selection at UofT. Education Pathways allows for more intelligent course searching, by matching not just the terms you search, but ones relevant to them. The more terms you search for, the more relevant your results will be! Even try searching across disciplines for the courses that best cover each.</p>
+<p>Whatever year you are looking for, Education Pathways will also suggest courses in earlier years that will best help you to prepare. To get the most out of this, try searching for courses in a later year and see what is suggested for your current one.</p>
+<p>We are looking for feedback to improve Education Pathways and make it more useful for students. If you have ideas or suggestions, please <a href="mailto:alex.olson@utoronto.ca">email us!</a></p>
+
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+  <dl>
+    {{ render_field(form.select) }}
+    <p>
+        Restrict by one of: {{ render_field(form.divisions) }} or {{ render_field(form.departments) }} or {{ render_field(form.campuses) }}
+    </p> 
+    <p>
+    {{ render_field(form.search) }}
+  </p></dl>
+  <p>{{render_field(form.top)}} <input type="submit" value="Search">
+</p></form>
+</doctype>

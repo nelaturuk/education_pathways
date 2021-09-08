@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education Pathways</title>
+</head>
+<a href="https://carte.utoronto.ca/" target="_blank"><img src="/static/CARTE_logo.jpg" class="img-fluid" style="max-width: 25%"></a>
+<h1 style="text-align: center">Education Pathways</h1>
+
+<body>
+    {% from "_formhelpers.html" import render_field %}
+    <form method="post">
+      <dl>
+        {{ render_field(form.select) }}
+        <p>
+          Restrict by one of: {{ render_field(form.divisions) }} or {{ render_field(form.departments) }} or {{ render_field(form.campuses) }}
+        </p> 
+        <p>
+        {{ render_field(form.search) }}
+      </p></dl>
+      <p>{{render_field(form.top)}} <input type="submit" value="Search">
+      </p></form>
+    
+{% for table in tables %}
+            {{ table|safe }}
+{% endfor %}
+</body>
+</html>
