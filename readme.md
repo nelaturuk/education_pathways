@@ -10,7 +10,7 @@ Repository files:
 
 `./readme.md` *this file*
 
-`./resources:` *contains datasets used in the program
+`./resources:` *contains datasets used in the program*
 
 `course_vectorizer.pickle df_processed.pickle`
 
