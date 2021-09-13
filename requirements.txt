@@ -1,28 +1,56 @@
-Bottleneck @ file:///opt/concourse/worker/volumes/live/ac8c8ef3-2ed0-42e9-6ec0-5bb05ad938f6/volume/bottleneck_1607575111469/work
-certifi==2021.5.30
-click @ file:///tmp/build/80754af9/click_1621604852318/work
-daal4py==2021.2.2
-decorator @ file:///home/ktietz/src/ci/decorator_1611930055503/work
-Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
-importlib-metadata @ file:///opt/concourse/worker/volumes/live/bdafb81c-7edc-4122-77fe-a69839ec3c71/volume/importlib-metadata_1617877361684/work
-itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
-Jinja2 @ file:///tmp/build/80754af9/jinja2_1624781299557/work
-joblib @ file:///tmp/build/80754af9/joblib_1613502643832/work
-MarkupSafe @ file:///opt/concourse/worker/volumes/live/1bcf0940-5bf8-4171-61e3-2133f5885e8b/volume/markupsafe_1621528148241/work
-mkl-fft==1.3.0
-mkl-random @ file:///opt/concourse/worker/volumes/live/ee9c6651-7474-4ea3-40dc-9000610cf5d2/volume/mkl_random_1618853976708/work
-mkl-service==2.3.0
-networkx @ file:///tmp/build/80754af9/networkx_1617653298338/work
-numexpr @ file:///opt/concourse/worker/volumes/live/8a490d79-0e07-4fed-40fc-a78f896e4811/volume/numexpr_1618856522733/work
-numpy @ file:///opt/concourse/worker/volumes/live/43c6229c-0418-40f9-7644-06e35c2c24e6/volume/numpy_and_numpy_base_1620831187393/work
-pandas==1.2.5
-python-dateutil @ file:///home/ktietz/src/ci/python-dateutil_1611928101742/work
-pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
-scikit-learn @ file:///opt/concourse/worker/volumes/live/83f46a43-da2a-467b-5581-ed2cbd128684/volume/scikit-learn_1621370403088/work
-scikit-learn-intelex==2021.20210504.110832
-scipy @ file:///opt/concourse/worker/volumes/live/e6cafc01-ffb4-49e0-5767-9e6700679b1a/volume/scipy_1618855952637/work
-six @ file:///tmp/build/80754af9/six_1623709665295/work
-threadpoolctl @ file:///tmp/tmp9twdgx9k/threadpoolctl-2.1.0-py3-none-any.whl
-Werkzeug @ file:///home/ktietz/src/ci/werkzeug_1611932622770/work
-WTForms @ file:///tmp/build/80754af9/wtforms_1597707484216/work
-zipp @ file:///tmp/build/80754af9/zipp_1625570634446/work
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+blas=1.0=mkl
+bottleneck=1.3.2
+ca-certificates=2021.7.5
+certifi=2021.5.30
+click=8.0.1
+daal4py=2021.2.2
+dal=2021.2.2
+decorator=4.4.2
+flask=1.1.2
+importlib-metadata=3.10.0
+intel-openmp=2021.2.0
+itsdangerous=2.0.1
+jinja2=3.0.1
+joblib=1.0.1
+libcxx=10.0.0=1
+libffi=3.3
+libgfortran=3.0.1
+llvm-openmp=10.0.0
+markupsafe=2.0.1
+mkl=2021.2.0
+mkl-service=2.3.0
+mkl_fft=1.3.0
+mkl_random=1.2.1
+mpi=1.0=mpich
+mpich=3.3.2
+ncurses=6.2
+networkx=2.5.1
+numexpr=2.7.3
+numpy=1.20.2
+numpy-base=1.20.2
+openssl=1.1.1k
+pandas=1.2.5
+pip=21.1.3
+python=3.9.5
+python-dateutil=2.8.1
+pytz=2021.1
+readline=8.1
+scikit-learn=0.24.2
+scikit-learn-intelex=2021.2.2
+scipy=1.6.2
+setuptools=52.0.0
+six=1.16.0
+sqlite=3.36.0
+tbb=2021.2.0
+threadpoolctl=2.1.0
+tk=8.6.10
+tzdata=2021a
+werkzeug=1.0.1
+wheel=0.36.2
+wtforms=2.3.3
+xz=5.2.5
+zipp=3.5.0
+zlib=1.2.11
